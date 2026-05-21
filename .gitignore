@@ -2,3 +2,6 @@
 .venvstremlit
 .env
 .streamlit/secrets.toml
+.streamlit
+.streamlit\secrets.toml
+secrets.toml
