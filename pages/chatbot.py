@@ -2,10 +2,6 @@ import streamlit as st
 import os
 from pathlib import Path
 from google import genai
-from dotenv import load_dotenv
-
-# Load environment variables dari file .env
-load_dotenv()
 
 # ==========================================
 # 1. SETUP API & INSTRUKSI AI
@@ -13,7 +9,8 @@ load_dotenv()
 st.set_page_config(page_title="Chatbot AI")
 st.title("Chatbot Informasi Sekolah")
 
-API_KEY = os.getenv("GEMINI_API_KEY")
+# Menggunakan fitur bawaan Streamlit Secrets
+API_KEY = st.secrets["GEMINI_API_KEY"]
 
 client = genai.Client(api_key=API_KEY)
 
